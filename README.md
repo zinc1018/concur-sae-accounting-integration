@@ -2,7 +2,7 @@
 
 Sanitized reference implementation for processing a SAP Concur Standard Accounting Extract (SAE)-style file and producing an ERP-neutral accounting journal.
 
-This project is informed by experience maintaining Concur SAE integrations across multiple organizations. It contains no employer names, production paths, credentials, private keys, customer data, or proprietary accounting mappings.
+This repository is an independently developed, sanitized reference implementation based on general integration-engineering experience. It does not reproduce the source code, configuration, mappings, credentials, data, or proprietary implementation of any employer or client.
 
 ## What it demonstrates
 
@@ -88,3 +88,11 @@ This repository intentionally uses local files and SQLite for portability. A pro
 ## Portfolio context
 
 The project demonstrates transferable integration experience: understanding an accounting extract, building a safe ingestion boundary, validating business dimensions, preserving auditability, preventing duplicates, and reconciling outputs before posting to an ERP.
+
+## Trademark and affiliation notice
+
+SAP and SAP Concur are trademarks or registered trademarks of SAP SE or its affiliates in Germany and other countries. This project is an independent reference implementation and is not affiliated with, endorsed by, or sponsored by SAP.
+
+## License
+
+This project is licensed under the MIT License. See `LICENSE`.
