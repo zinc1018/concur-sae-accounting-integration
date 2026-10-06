@@ -1,0 +1,3 @@
+batch_id|row_id|employee_id|report_key|transaction_date|account|company|branch|department|debit_credit|amount|description|currency
+B-100|1|E-42|R-9|2026-10-05|6100|100|TOR|OPS|DR|100.00|Fuel|CAD
+B-100|2|E-42|R-9|2026-10-05|2100|100|TOR|OPS|CR|100.00|Fuel clearing|CAD

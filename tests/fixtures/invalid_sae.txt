@@ -1,0 +1,4 @@
+batch_id|row_id|employee_id|report_key|transaction_date|account|company|branch|department|debit_credit|amount|description|currency
+B-101|1|E-77|R-11|2026-10-05|6100|100|TOR|OPS|DR|50.00|Meals|CAD
+B-101|2|E-77|R-11|2026-10-05|2100|100|TOR|OPS|CR|50.00|Meals clearing|CAD
+B-101|3|E-88|R-12|2026-10-05|6100|100|TOR|OPS|XX|25.00|Invalid row|CAD
