@@ -1,7 +1,5 @@
 # Concur SAE Accounting Pipeline Implementation Plan
 
-> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:executing-plans to implement this plan task-by-task.
-
 **Goal:** Build a sanitized, runnable Python reference pipeline that ingests a pipe-delimited Concur SAE-style file and produces idempotent, validated, reconciled, ERP-neutral journal output.
 
 **Architecture:** A small standard-library Python package will separate file hashing/manifest tracking, parsing and validation, journal normalization, and output reporting. SQLite will store file-processing state; CSV and JSON outputs will make the run inspectable without an external accounting system.
