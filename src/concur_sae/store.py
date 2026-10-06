@@ -20,7 +20,12 @@ def initialize(db_path: str) -> None:
 def find_success(db_path: str, checksum: str) -> tuple[str, str] | None:
     with sqlite3.connect(db_path) as connection:
         row = connection.execute(
-            "SELECT status, message FROM file_manifest WHERE checksum = ? AND status = 'COMPLETED'",
+            """
+            SELECT status, message
+            FROM file_manifest
+            WHERE checksum = ?
+              AND status IN ('COMPLETED', 'COMPLETED_WITH_QUARANTINE')
+            """,
             (checksum,),
         ).fetchone()
     return row if row else None

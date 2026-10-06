@@ -54,3 +54,16 @@ def test_repeated_successful_execution_does_not_append_journal_rows(tmp_path: Pa
     run_file(input_path, output_dir, db_path)
 
     assert (output_dir / "journal.csv").read_text() == journal_before
+
+
+def test_repeated_quarantined_execution_is_also_idempotent(tmp_path: Path):
+    input_path = tmp_path / "input.txt"
+    shutil.copy(FIXTURES / "invalid_sae.txt", input_path)
+    output_dir = tmp_path / "out"
+    db_path = tmp_path / "manifest.sqlite3"
+
+    first = run_file(input_path, output_dir, db_path)
+    second = run_file(input_path, output_dir, db_path)
+
+    assert first.status == "COMPLETED_WITH_QUARANTINE"
+    assert second.status == "DUPLICATE"
