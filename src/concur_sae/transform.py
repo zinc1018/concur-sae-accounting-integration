@@ -27,7 +27,7 @@ def _quarantine(row: dict[str, str], row_number: int, code: str, reason: str) ->
 
 def parse_record(row: dict[str, str], row_number: int) -> SaeRecord | QuarantineRecord:
     for field in REQUIRED_FIELDS:
-        if not row.get(field, "").strip():
+        if not (row.get(field) or "").strip():
             return _quarantine(row, row_number, "MISSING_REQUIRED_FIELD", f"Missing required field: {field}")
 
     try:

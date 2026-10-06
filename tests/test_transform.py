@@ -51,6 +51,16 @@ def test_parse_record_quarantines_unsupported_debit_credit_code():
     assert result.error_code == "INVALID_DEBIT_CREDIT"
 
 
+def test_parse_record_quarantines_truncated_row():
+    row = valid_row()
+    row["currency"] = None  # type: ignore[assignment]
+
+    result = parse_record(row, row_number=6)
+
+    assert isinstance(result, QuarantineRecord)
+    assert result.error_code == "MISSING_REQUIRED_FIELD"
+
+
 def test_reconcile_reports_unbalanced_journal():
     line = JournalLine(
         journal_id="B-100:7",
